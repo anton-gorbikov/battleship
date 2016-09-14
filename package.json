@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/anton-gorbikov/battleship#readme",
   "devDependencies": {
-    "eslint": "^3.4.0"
+    "eslint": "^3.4.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1"
   }
 }
