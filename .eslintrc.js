@@ -1,5 +1,8 @@
 module.exports = {
 	extends: 'eslint:recommended',
+	parserOptions: {
+		ecmaVersion: 6
+	},
 	rules: {
 		// Possible Errors section.
 		'no-extra-parens': ['error', 'all'],
@@ -148,7 +151,7 @@ module.exports = {
 		'object-curly-spacing': ['error', 'always'],
 		'object-property-newline': 'off', // OK
 		'one-var-declaration-per-line': ['error', 'initializations'],
-		'one-var': ['error', 'always'],
+		'one-var': 'off',
 		'operator-assignment': ['error', 'always'],
 		'operator-linebreak': ['error', 'after'],
 		'padded-blocks': ['error', 'never'],
