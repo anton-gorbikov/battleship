@@ -3,26 +3,10 @@
 var gulp = require('gulp'),
 	eslint = require('gulp-eslint');
 
-gulp.task('js-precommit', ['js-precommit-server', 'js-precommit-client']);
-
-gulp.task('js-precommit-client', () => {
-	return gulp.src(['src-ui/**/*.js'])
+gulp.task('js-precommit', () => {
+	return gulp.src(['src-ui/**/*.js', 'src-server/**/*.js'])
 		.pipe(eslint({
-			rulePaths: [''],
-			envs: ['browser']
-		}))
-		.pipe(eslint.format())
-		.pipe(eslint.failAfterError());
-});
-
-gulp.task('js-precommit-server', () => {
-	return gulp.src(['src-server/**/*.js'])
-		.pipe(eslint({
-			rulePaths: [''],
-			envs: ['node'],
-			rules: {
-				'no-console': 'off'
-			}
+			rulePaths: ['']
 		}))
 		.pipe(eslint.format())
 		.pipe(eslint.failAfterError());
