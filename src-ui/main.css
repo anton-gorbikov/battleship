@@ -1,0 +1,11 @@
+.field-container {
+	display: inline-block;
+}
+.field-container.right {
+	margin-left: 20px;
+}
+.field-container td {
+	height: 30px;
+	width: 30px;
+	background-color: #cccccc;
+}

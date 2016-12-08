@@ -1,6 +1,8 @@
 module.exports = {
 	extends: '../.eslintrc.js',
 	env: {
-		browser: true
+		browser: true,
+		node: false,
+		commonjs: true
 	}
 };

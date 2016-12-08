@@ -3,6 +3,9 @@ module.exports = {
 	parserOptions: {
 		ecmaVersion: 6
 	},
+	env: {
+		node: true
+	},
 	rules: {
 		// Possible Errors section.
 		'no-extra-parens': ['error', 'all'],
@@ -114,7 +117,7 @@ module.exports = {
 		'jsx-quotes': 'off', // OK
 		'key-spacing': ['error', { 'beforeColon': false, 'afterColon': true, 'mode': 'strict' }],
 		'keyword-spacing': ['error', { 'before': true, 'after': true }],
-		'linebreak-style': ['error', 'windows'],
+		'linebreak-style': ['off'], // OK
 		'lines-around-comment': ['error', { 'beforeBlockComment': true }],
 		'max-depth': ['error', 4],
 		'max-len': ['error', 80],

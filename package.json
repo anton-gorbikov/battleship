@@ -4,7 +4,7 @@
   "description": "A web implementation of classic board game.",
   "main": "index.js",
   "scripts": {
-    "start": "node src-server/index.js"
+    "start": "node dist/src-server/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,9 +20,11 @@
   },
   "homepage": "https://github.com/anton-gorbikov/battleship#readme",
   "devDependencies": {
+    "browserify": "^13.1.1",
     "eslint": "^3.4.0",
     "gulp": "^3.9.1",
-    "gulp-eslint": "^3.0.1"
+    "gulp-eslint": "^3.0.1",
+    "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
     "express": "^4.14.0"
