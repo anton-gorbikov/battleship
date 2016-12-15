@@ -2,4 +2,4 @@
 
 let gameSetup = require('./game-setup');
 
-gameSetup();
+gameSetup.startGame();

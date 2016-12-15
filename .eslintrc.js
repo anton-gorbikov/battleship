@@ -82,7 +82,7 @@ module.exports = {
 		'no-shadow': 'off', // OK
 		'no-undef-init': 'error',
 		'no-undefined': 'error',
-		'no-use-before-define': 'error',
+		'no-use-before-define': ['error', { 'functions': false }],
 
 		// Node.js and CommonJS section.
 		'callback-return': 'error',
@@ -120,7 +120,7 @@ module.exports = {
 		'linebreak-style': ['off'], // OK
 		'lines-around-comment': ['error', { 'beforeBlockComment': true }],
 		'max-depth': ['error', 4],
-		'max-len': ['error', 80],
+		'max-len': 'off', // OK
 		'max-lines': 'off', // OK
 		'max-nested-callbacks': ['error', 3],
 		'max-params': ['error', 5],
@@ -150,7 +150,7 @@ module.exports = {
 		'no-underscore-dangle': ['error', { 'allowAfterThis': true }],
 		'no-unneeded-ternary': 'error',
 		'no-whitespace-before-property': 'error',
-		'object-curly-newline': ['error', { 'minProperties': 3 }],
+		'object-curly-newline': 'off', // OK
 		'object-curly-spacing': ['error', 'always'],
 		'object-property-newline': 'off', // OK
 		'one-var-declaration-per-line': ['error', 'initializations'],
@@ -189,7 +189,7 @@ module.exports = {
 		'object-shorthand': 'off', // OK
 		'prefer-arrow-callback': 'off', // OK
 		'prefer-const': 'off', // OK
-		'prefer-reflect': 'error',
+		'prefer-reflect': 'off', // OK
 		'prefer-rest-params': 'error',
 		'prefer-spread': 'error',
 		'prefer-template': 'error',
