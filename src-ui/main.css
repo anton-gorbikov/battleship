@@ -1,11 +1,44 @@
 .field-container {
 	display: inline-block;
 }
-.field-container.right {
-	margin-left: 20px;
+.field-container.left {
+	margin-right: 20px;
 }
 .field-container td {
 	height: 30px;
 	width: 30px;
+	min-width: 30px;
 	background-color: #cccccc;
+	position: relative;
+}
+.field-container td.deck {
+	background-color: #000000;
+	box-sizing: border-box;
+	border: 8px #cccccc solid;
+}
+.field-container td.dead:after, .field-container td.dead:before {
+	content: '';
+	background-color: #ff0000;
+	width: 4px;
+	height: 30px;
+	position: absolute;
+	border-radius: 4px;
+	top: -7px;
+	left: 6px;
+}
+.field-container td.dead:after {
+	transform: rotate(45deg);
+}
+.field-container td.dead:before {
+	transform: rotate(-45deg);
+}
+.field-container td.miss:after {
+	content: '';
+	background-color: #0000ff;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	border-radius: 5px;
+	top: 11px;
+	left: 10px;
 }

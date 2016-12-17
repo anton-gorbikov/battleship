@@ -1,13 +1,8 @@
 'use strict';
 
-// TODO: As for now that's fine. Consider to move into shared resources between server and client.
-const FieldSize = 10;
-let FieldState = {
-	Empty: 0,
-	Deck: 1,
-	Miss: 2,
-	Dead: 3
-};
+let constants = require('../../src-common/constants');
+const FieldSize = constants.FieldSize;
+let FieldState = constants.FieldState;
 
 let field = resetField();
 
@@ -39,9 +34,9 @@ function getPosition(event) {
 function toggleShipDeck(event) {
 	let position = getPosition(event);
 	let r = position.row;
-	let k = position.column;
+	let c = position.column;
 
-	field[r][k] = field[r][k] === FieldState.Empty ? FieldState.Deck : FieldState.Empty;
+	field[r][c] = field[r][c] === FieldState.Empty ? FieldState.Deck : FieldState.Empty;
 }
 
 function listenToFieldConfiguration() {
