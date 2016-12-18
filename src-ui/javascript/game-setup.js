@@ -1,12 +1,14 @@
 'use strict';
 
 let constants = require('../../src-common/constants');
+let fieldView = require('./field-view');
+
 const FieldSize = constants.FieldSize;
 let FieldState = constants.FieldState;
 
-let field = resetField();
+let field = createField();
 
-function resetField() {
+function createField() {
 	let newField = [];
 
 	for (let i = 0; i < FieldSize; ++i) {
@@ -16,27 +18,40 @@ function resetField() {
 			newField[i].push(FieldState.Empty);
 		}
 	}
+
+	return newField;
 }
 
 function getPosition(event) {
-	let targetColumn = event.target;
-	let targetRow = targetColumn.parentNode;
+	let result = null;
 
-	let column = Array.prototype.indexOf.call(targetRow.children, targetColumn);
-	let row = Array.prototype.indexOf.call(targetRow.parentNode.children, targetRow);
+	if (event.target.tagName === 'TD') {
+		let targetColumn = event.target;
+		let targetRow = targetColumn.parentNode;
 
-	return {
-		row: row,
-		column: column
-	};
+		let column = Array.prototype.indexOf.call(targetRow.children, targetColumn);
+		let row = Array.prototype.indexOf.call(targetRow.parentNode.children, targetRow);
+
+		result = {
+			row: row,
+			column: column
+		};
+	}
+
+	return result;
 }
 
 function toggleShipDeck(event) {
 	let position = getPosition(event);
-	let r = position.row;
-	let c = position.column;
 
-	field[r][c] = field[r][c] === FieldState.Empty ? FieldState.Deck : FieldState.Empty;
+	if (position) {
+		let r = position.row;
+		let c = position.column;
+
+		field[r][c] = field[r][c] === FieldState.Empty ? FieldState.Deck : FieldState.Empty;
+
+		fieldView.render(document.getElementById('client'), field);
+	}
 }
 
 function listenToFieldConfiguration() {
@@ -50,6 +65,6 @@ module.exports = {
 		listenToFieldConfiguration();
 	},
 	restart: () => {
-		field = resetField();
+		field = createField();
 	}
 };
