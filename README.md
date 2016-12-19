@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/anton-gorbikov/battleship.svg?branch=master)](https://travis-ci.org/anton-gorbikov/battleship)
+
 # battleship
 A simple web implementation of a classic board game.
 
