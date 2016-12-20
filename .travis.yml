@@ -1,6 +1,8 @@
 language: node_js
 node_js:
   - "node"
+addons:
+  firefox: "latest"
 install:
   - npm install
   - npm install -g gulp
