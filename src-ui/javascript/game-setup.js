@@ -3,19 +3,16 @@
 let constants = require('../../src-common/constants');
 let fieldView = require('./field-view');
 
-const FieldSize = constants.FieldSize;
-let FieldState = constants.FieldState;
-
 let field = createField();
 
 function createField() {
 	let newField = [];
 
-	for (let i = 0; i < FieldSize; ++i) {
+	for (let i = 0; i < constants.FieldSize; ++i) {
 		newField.push([]);
 
-		for (let j = 0; j < FieldSize; ++j) {
-			newField[i].push(FieldState.Empty);
+		for (let j = 0; j < constants.FieldSize; ++j) {
+			newField[i].push(constants.FieldState.Empty);
 		}
 	}
 
@@ -48,7 +45,7 @@ function toggleShipDeck(event) {
 		let r = position.row;
 		let c = position.column;
 
-		field[r][c] = field[r][c] === FieldState.Empty ? FieldState.Deck : FieldState.Empty;
+		field[r][c] = field[r][c] === constants.FieldState.Empty ? constants.FieldState.Deck : constants.FieldState.Empty;
 
 		fieldView.render(document.getElementById('client'), field);
 	}
@@ -66,5 +63,8 @@ module.exports = {
 	},
 	restart: () => {
 		field = createField();
-	}
+	},
+	_toggleShipDeck: toggleShipDeck,
+	_getPosition: getPosition,
+	_createField: createField
 };

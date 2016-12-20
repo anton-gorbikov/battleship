@@ -5,7 +5,7 @@ let eslint = require('gulp-eslint');
 let browserify = require('browserify');
 let source = require('vinyl-source-stream');
 
-gulp.task('js-precommit', () => {
+gulp.task('js-static-analysis', () => {
 	return gulp.src(['src-ui/**/*.js', 'src-server/**/*.js'])
 		.pipe(eslint({
 			rulePaths: ['']
