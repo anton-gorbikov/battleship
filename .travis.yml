@@ -8,4 +8,4 @@ install:
 script:
   - gulp js-static-analysis
   - gulp build
-  - karma start ./karma.conf.js --single-run --browsers Firefox
+  - $(npm bin)/karma start ./karma.conf.js --single-run --browsers Firefox
