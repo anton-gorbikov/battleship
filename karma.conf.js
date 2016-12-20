@@ -12,7 +12,10 @@ module.exports = function(config) {
 			'test-unit/**/*.js': 'browserify'
 		},
 		plugins: [
-			'karma-browserify'
+			'karma-browserify',
+			'karma-jasmine',
+			'karma-firefox-launcher',
+			'karma-chrome-launcher'
 		],
 		reporters: ['progress'],
 		port: 9876,
