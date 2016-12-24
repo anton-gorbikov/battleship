@@ -5,15 +5,15 @@
 	margin-right: 20px;
 }
 .field-container td {
-	height: 30px;
-	width: 30px;
-	min-width: 30px;
+	height: 32px;
+	width: 32px;
+	min-width: 32px;
 	background-color: #cccccc;
 	position: relative;
+	box-sizing: border-box;
 }
 .field-container td.deck {
 	background-color: #000000;
-	box-sizing: border-box;
 	border: 8px #cccccc solid;
 }
 .field-container td.dead:after, .field-container td.dead:before {

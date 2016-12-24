@@ -17,6 +17,9 @@ module.exports = function(config) {
 			'karma-firefox-launcher',
 			'karma-chrome-launcher'
 		],
+		browserify: {
+			transform: ['stringify']
+		},
 		reporters: ['progress'],
 		port: 9876,
 		colors: true,
