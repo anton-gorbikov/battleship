@@ -113,7 +113,7 @@ module.exports = {
 		'id-blacklist': 'off', // TODO
 		'id-length': 'off', // TODO
 		'id-match': 'off', // TODO
-		'indent': ['error', 'tab'],
+		'indent': ['error', 'tab', { 'SwitchCase': 1 }],
 		'jsx-quotes': 'off', // OK
 		'key-spacing': ['error', { 'beforeColon': false, 'afterColon': true, 'mode': 'strict' }],
 		'keyword-spacing': ['error', { 'before': true, 'after': true }],
